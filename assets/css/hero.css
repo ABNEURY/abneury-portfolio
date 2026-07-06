@@ -1,0 +1,92 @@
+/* ============================
+        HERO SECTION
+============================ */
+
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 90px;
+}
+
+/* BADGE */
+
+.hero-badge{
+    display: inline-block;
+    padding: 8px 14px;
+    background: rgba(56,189,248,0.1);
+    color: var(--secondary);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+/* TITLE */
+
+.hero-title{
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+.hero-title span{
+    color: var(--secondary);
+}
+
+/* ROLE */
+
+.hero-role{
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin: 15px 0 25px 0;
+}
+
+/* TEXT */
+
+.hero-text{
+    color: var(--muted);
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+    display: flex;
+    gap: 15px;
+}
+
+/* CARD VISUAL */
+
+.hero-card{
+    background: var(--card);
+    padding: 30px;
+    border-radius: var(--radius);
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* IMAGE */
+
+.hero-image{
+    width: 260px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* STATUS */
+
+.hero-status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.dot{
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+}
