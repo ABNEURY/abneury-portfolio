@@ -17,3 +17,59 @@ grid-template-columns:1fr;
 }
 
 }
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+.about-image{
+    max-width:320px;
+    margin:auto;
+}
+@media(max-width:900px){
+
+.expertise-grid{
+    grid-template-columns:1fr;
+}
+
+}
+@media(max-width:900px){
+
+.projects-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+@media(max-width:900px){
+
+.labs-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+@media(max-width:900px){
+
+.documentation-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+@media(max-width:900px){
+
+.certifications-grid{
+    grid-template-columns:1fr;
+}
+
+}
+@media(max-width:900px){
+
+.articles-grid{
+    grid-template-columns:1fr;
+}
+
+}
