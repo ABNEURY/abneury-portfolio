@@ -73,3 +73,14 @@ grid-template-columns:1fr;
 }
 
 }
+@media(max-width:900px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+}
