@@ -158,3 +158,62 @@ section{
     transform:translateY(0);
 
 }
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+.back-to-top{
+
+    position:fixed;
+
+    right:35px;
+
+    bottom:35px;
+
+    width:54px;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:1.2rem;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:.35s ease;
+
+    box-shadow:var(--shadow);
+
+    z-index:999;
+
+}
+
+.back-to-top:hover{
+
+    transform:translateY(-5px);
+
+    background:var(--secondary);
+
+}
+
+.back-to-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
