@@ -1,8 +1,17 @@
+/* ==========================
+   FOOTER
+========================== */
+
 .footer{
-    margin-top:100px;
-    background:#0b1220;
-    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:var(--section-padding);
+    background:var(--surface);
+    border-top:1px solid var(--border);
 }
+
+
+/* ==========================
+   GRID
+========================== */
 
 .footer-grid{
     display:grid;
@@ -10,6 +19,11 @@
     gap:40px;
     padding:70px 0;
 }
+
+
+/* ==========================
+   TYPOGRAPHY
+========================== */
 
 .footer h2,
 .footer h3{
@@ -21,21 +35,34 @@
 .footer a{
     color:var(--muted);
     line-height:1.8;
-    text-decoration:none;
 }
 
-.footer ul{
-    list-style:none;
-    padding:0;
-    margin:0;
+.footer a{
+    text-decoration:none;
+    transition:var(--transition);
 }
 
 .footer a:hover{
     color:var(--primary);
 }
 
+
+/* ==========================
+   LISTS
+========================== */
+
+.footer ul{
+    margin:0;
+    padding:0;
+}
+
+
+/* ==========================
+   COPYRIGHT
+========================== */
+
 .footer-bottom{
-    border-top:1px solid rgba(255,255,255,.08);
+    border-top:1px solid var(--border);
     text-align:center;
     padding:25px 0;
 }

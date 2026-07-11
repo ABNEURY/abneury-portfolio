@@ -1,10 +1,160 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+
+/* ==========================
+   BODY
+========================== */
+
+body{
+    font-family:"Inter", sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+}
+
+
+/* ==========================
+   TEXT SELECTION
+========================== */
+
+::selection{
+    background:var(--primary);
+    color:#fff;
+}
+
+
+/* ==========================
+   CONTAINER
+========================== */
+
 .container{
-    width:min(1200px,90%);
-    margin:auto;
+    width:min(var(--container), 90%);
+    margin:0 auto;
+}
+
+
+/* ==========================
+   TYPOGRAPHY
+========================== */
+
+h1,
+h2,
+h3{
+    font-weight:700;
+    line-height:1.2;
+}
+
+h1{
+    font-size:4rem;
+}
+
+h2{
+    font-size:2.5rem;
+}
+
+h3{
+    font-size:1.35rem;
+}
+
+p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+
+/* ==========================
+   LINKS
+========================== */
+
+a{
+    text-decoration:none;
+    color:inherit;
+    transition:var(--transition);
+}
+
+
+/* ==========================
+   IMAGES
+========================== */
+
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
+}
+
+
+/* ==========================
+   LISTS
+========================== */
+
+ul,
+ol{
+    list-style:none;
+}
+
+
+/* ==========================
+   SECTIONS
+========================== */
+
+section{
+    padding:var(--section-padding) 0;
+}
+
+
+/* ==========================
+   SECTION COMPONENTS
+========================== */
+
+.section-tag{
+    color:var(--primary);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.section-title{
+    margin:20px 0;
+}
+
+.section-description{
+    max-width:700px;
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:60px;
+}
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
 }

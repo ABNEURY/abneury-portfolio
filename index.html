@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of José Alberto, Systems Administrator specialized in Windows Server, Networking, Infrastructure, Technical Documentation and IT Projects.">
+    <meta
+    name="author"
+    content="José Alberto">
+    <meta
+    name="theme-color"
+    content="#0f172a">
     <title>José Alberto | IT Portfolio</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
@@ -13,25 +20,23 @@
 
     <div class="container">
 
-        <a href="#" class="logo">
-            José Alberto
-        </a>
+    <a href="index.html" class="logo">
+        José Alberto 
+    </a>
 
         <nav>
 
-            <ul class="nav-links">
-
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Labs</a></li>
-                <li><a href="#">Blog</a></li>
-
-            </ul>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#labs">Labs</a></li>
+            <li><a href="#articles">Articles</a></li>
+        </ul>
 
         </nav>
 
-        <a href="#" class="btn-primary">
+        <a href="#footer" class="btn-primary">
             Contact
         </a>
 
@@ -40,13 +45,13 @@
 </header>
 
 <main>
-    <section class="hero">
+    <section id="home" class="hero">
 
     <div class="container hero-grid">
 
         <div class="hero-content">
 
-            <span class="hero-tag">
+            <span class="hero-badge">
                 Systems Administration • Networking • Cybersecurity
             </span>
 
@@ -54,12 +59,12 @@
                 José Alberto
             </h1>
 
-            <h2>
+            <h2 class="hero-role">
                 Systems Administrator &
                 Infrastructure Engineer
             </h2>
 
-            <p>
+            <p class="hero-text">
                Construo e aprimoro infraestruturas de TI seguras, 
                confiáveis e escaláveis, transformando conhecimento técnico em soluções
                 reais através de projetos, laboratórios e evolução constante.
@@ -81,8 +86,9 @@
 
         <div class="hero-image">
 
-            <img src="assets/images/Foto profissional.jpeg"
-                 alt="José Alberto">
+            <img
+                src="assets/images/Foto profissional.jpeg"
+                alt="José Alberto - Systems Administrator">
 
         </div>
 
@@ -101,22 +107,22 @@
 
             <div class="stat-card">
                 <h3>Projects</h3>
-                <span>0</span>
+                <span class="counter" data-target="25">0</span>
             </div>
 
             <div class="stat-card">
                 <h3>Labs</h3>
-                <span>0</span>
+                <span class="counter" data-target="60">0</span>
             </div>
 
             <div class="stat-card">
                 <h3>Documentation</h3>
-                <span>0</span>
+                <span class="counter" data-target="35">0</span>
             </div>
 
             <div class="stat-card">
                 <h3>Scripts</h3>
-                <span>0</span>
+                <span class="counter" data-target="18">0</span>
             </div>
 
         </div>
@@ -124,7 +130,7 @@
     </div>
 
 </section>
-<section class="about-preview">
+<section id="about" class="about-preview reveal">
 
     <div class="container about-grid">
 
@@ -160,7 +166,7 @@
     </div>
 
 </section>
-<section class="expertise">
+<section id="expertise" class="expertise reveal">
 
     <div class="container">
 
@@ -207,7 +213,7 @@
     </div>
 
 </section>
-<section class="projects-preview">
+<section id="projects" class="projects-preview reveal">
 
     <div class="container">
 
@@ -219,7 +225,7 @@
 
         <div class="projects-grid">
 
-            <div class="project-card">
+            <article class="project-card">
 
                 <h3>Enterprise Active Directory</h3>
 
@@ -239,9 +245,9 @@
                     View Project
                 </a>
 
-            </div>
+            </article>
 
-            <div class="project-card">
+            <article class="project-card">
 
                 <h3>Enterprise Network</h3>
 
@@ -261,9 +267,9 @@
                     View Project
                 </a>
 
-            </div>
+            </article>
 
-            <div class="project-card">
+            <article class="project-card">
 
                 <h3>Infrastructure Monitoring</h3>
 
@@ -281,14 +287,14 @@
                     View Project
                 </a>
 
-            </div>
+            </article>
 
         </div>
 
     </div>
 
 </section>
-<section class="labs-preview">
+<section id="labs" class="labs-preview reveal">
 
     <div class="container">
 
@@ -300,7 +306,7 @@
 
         <div class="labs-grid">
 
-            <div class="lab-card">
+            <article class="lab-card">
 
                 <h3>Active Directory Forest Lab</h3>
 
@@ -318,9 +324,9 @@
                     View Lab
                 </a>
 
-            </div>
+            </article>
 
-            <div class="lab-card">
+            <article class="lab-card">
 
                 <h3>Enterprise OSPF Lab</h3>
 
@@ -338,9 +344,9 @@
                     View Lab
                 </a>
 
-            </div>
+            </article>
 
-            <div class="lab-card">
+            <article class="lab-card">
 
                 <h3>Linux Web Server</h3>
 
@@ -358,14 +364,14 @@
                     View Lab
                 </a>
 
-            </div>
+            </article>
 
         </div>
 
     </div>
 
 </section>
-<section class="documentation-preview">
+<section id="documentation" class="documentation-preview reveal">
 
     <div class="container">
 
@@ -382,7 +388,7 @@
 
         <div class="documentation-grid">
 
-            <div class="documentation-card">
+            <article class="documentation-card">
 
                 <h3>📘 Standard Operating Procedures</h3>
 
@@ -395,9 +401,9 @@
                     View Documentation
                 </a>
 
-            </div>
-
-            <div class="documentation-card">
+            </article>
+            
+            <article class="documentation-card">
 
                 <h3>📑 Infrastructure Documentation</h3>
 
@@ -410,9 +416,9 @@
                     View Documentation
                 </a>
 
-            </div>
+            </article>
 
-            <div class="documentation-card">
+            <article class="documentation-card">
 
                 <h3>🌐 Network Diagrams</h3>
 
@@ -425,14 +431,14 @@
                     View Diagrams
                 </a>
 
-            </div>
+            </article>
 
         </div>
 
     </div>
 
 </section>
-<section class="certifications-preview">
+<section id="certifications" class="certifications-preview reveal">
 
     <div class="container">
 
@@ -449,7 +455,7 @@
 
         <div class="certifications-grid">
 
-            <div class="certification-card">
+            <article class="certification-card">
 
                 <h3>Cisco</h3>
 
@@ -463,9 +469,9 @@
                     View Certificates
                 </a>
 
-            </div>
+            </article>
 
-            <div class="certification-card">
+            <article class="certification-card">
 
                 <h3>Microsoft</h3>
 
@@ -479,9 +485,9 @@
                     View Certificates
                 </a>
 
-            </div>
+            </article>
 
-            <div class="certification-card">
+            <article class="certification-card">
 
                 <h3>IBM & Others</h3>
 
@@ -495,14 +501,14 @@
                     View Certificates
                 </a>
 
-            </div>
+            </article>
 
         </div>
 
     </div>
 
 </section>
-<section class="articles-preview">
+<section id="articles" class="articles-preview reveal">
 
     <div class="container">
 
@@ -592,8 +598,7 @@
 
 </main>
 
-<script src="assets/js/main.js"></script>
-<footer class="footer">
+<footer id="footer" class="footer"></footer>
 
     <div class="container footer-grid">
 
@@ -681,5 +686,11 @@
     </div>
 
 </footer>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/scroll.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/counter.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
