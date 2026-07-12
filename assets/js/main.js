@@ -18,5 +18,7 @@ function init(){
     initAnimations();
 
     initCounters();
+    
+    renderProjects();
 
 }
