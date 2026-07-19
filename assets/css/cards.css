@@ -261,3 +261,122 @@
     flex:1;
 
 }
+/* ==========================
+   SECTION ACTIONS
+========================== */
+
+.section-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:50px;
+
+}
+/* ==================================================
+   LOADING STATE
+================================================== */
+
+.loading {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: var(--muted);
+
+    font-size: 1rem;
+}
+/* ==================================================
+   PROJECT SKELETON
+================================================== */
+
+.project-skeleton {
+
+    min-height: 380px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        var(--surface),
+        rgba(255, 255, 255, 0.08),
+        var(--surface)
+    );
+
+    background-size: 200% 100%;
+
+    animation: skeleton-loading 1.5s infinite;
+
+}
+
+
+/* ==================================================
+   SKELETON ANIMATION
+================================================== */
+
+@keyframes skeleton-loading {
+
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+
+}
+/* ==================================================
+   LABS GRID
+================================================== */
+
+.labs-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+
+/* ==================================================
+   LAB CARD
+================================================== */
+
+.lab-card {
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+}
+
+
+/* ==================================================
+   LAB CARD ACTIONS
+================================================== */
+
+.lab-card .project-actions {
+    margin-top: auto;
+}
+/* ==================================================
+   LAB FOOTER
+================================================== */
+
+.lab-footer {
+
+    margin-top: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+}

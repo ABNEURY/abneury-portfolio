@@ -26,13 +26,13 @@
 
         <nav>
 
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#labs">Labs</a></li>
-            <li><a href="#articles">Articles</a></li>
-        </ul>
+<ul class="nav-links">
+    <li><a href="index.html#home" class="active">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#labs">Labs</a></li>
+    <li><a href="index.html#articles">Articles</a></li>
+</ul>
 
         </nav>
 
@@ -230,6 +230,15 @@
         </div>
 
     </div>
+    <div class="section-actions">
+
+    <a href="projects.html" class="btn-secondary">
+
+        View All Projects →
+
+    </a>
+
+</div>
 
 </section>
 <section id="labs" class="labs-preview reveal">
@@ -242,69 +251,21 @@
             Hands-on Laboratory Experience
         </h2>
 
-        <div class="labs-grid">
-
-            <article class="lab-card">
-
-                <h3>Active Directory Forest Lab</h3>
-
-                <div class="tags">
-                    <span>Windows Server</span>
-                    <span>AD DS</span>
-                </div>
-
-                <p>
-                    Enterprise Active Directory deployment with Domain
-                    Controllers, Organizational Units and Group Policies.
-                </p>
-
-                <a href="labs.html" class="btn-primary">
-                    View Lab
-                </a>
-
-            </article>
-
-            <article class="lab-card">
-
-                <h3>Enterprise OSPF Lab</h3>
-
-                <div class="tags">
-                    <span>Cisco</span>
-                    <span>OSPF</span>
-                </div>
-
-                <p>
-                    Dynamic routing implementation between multiple
-                    enterprise sites using OSPF.
-                </p>
-
-                <a href="labs.html" class="btn-primary">
-                    View Lab
-                </a>
-
-            </article>
-
-            <article class="lab-card">
-
-                <h3>Linux Web Server</h3>
-
-                <div class="tags">
-                    <span>Ubuntu</span>
-                    <span>Apache</span>
-                </div>
-
-                <p>
-                    Installation, configuration and hardening
-                    of an Apache Web Server.
-                </p>
-
-                <a href="labs.html" class="btn-primary">
-                    View Lab
-                </a>
-
-            </article>
-
+        <div
+            id="labs-container"
+            class="labs-grid">
         </div>
+    <div class="section-actions">
+
+    <a
+        href="labs.html"
+        class="btn-primary">
+
+        View All Labs
+
+    </a>
+
+</div>
 
     </div>
 
@@ -637,7 +598,10 @@
 <script src="assets/js/scroll.js"></script>
 <script src="assets/js/animations.js"></script>
 <script src="assets/js/counter.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
 <script src="assets/js/projects.js"></script>
+<script src="assets/js/labs.js"></script>
 <script src="assets/js/main.js"></script>
 
 </body>

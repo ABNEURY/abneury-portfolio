@@ -1,140 +1,75 @@
 /* ==========================================
    PROJECTS
 ========================================== */
-const projects = [
 
-    {
-        title: "Enterprise Active Directory",
-
-        description: "Complete Active Directory deployment with DNS, DHCP and Group Policy.",
-
-        image: "assets/images/projects/ad.png",
-
-        category: "Windows Server",
-
-        github: "#",
-
-        demo: "#",
-
-        featured: true,
-
-        tags: [
-            "Windows Server",
-            "Active Directory",
-            "DNS"
-        ]
-    },
-
-    {
-        title: "Corporate DNS",
-
-        description: "Enterprise DNS implementation with Forward Lookup, Reverse Lookup and Conditional Forwarders.",
-
-        image: "assets/images/projects/dns.png",
-
-        category: "Networking",
-
-        github: "#",
-
-        demo: "#",
-
-        featured: true,
-
-        tags: [
-            "DNS",
-            "Networking",
-            "Windows Server"
-        ]
-    },
-
-    {
-        title: "DHCP Failover",
-
-        description: "High availability DHCP implementation using Failover between two Windows Servers.",
-
-        image: "assets/images/projects/dhcp.png",
-
-        category: "Infrastructure",
-
-        github: "#",
-
-        demo: "#",
-
-        featured: true,
-
-        tags: [
-            "DHCP",
-            "Infrastructure",
-            "Windows Server"
-        ]
-    }
-
-];
-function createProjectCard(project){
-
-    return `
-
-        <article class="project-card">
-
-            <img
-                src="${project.image}"
-                alt="${project.title}"
-                class="project-image">
-
-            <span class="project-category">
-
-                ${project.category}
-
-            </span>
-
-            <h3>${project.title}</h3>
-
-            <p>${project.description}</p>
-
-            <div class="tags">
-
-                ${project.tags
-                    .map(tag => `<span>${tag}</span>`)
-                    .join("")}
-
-            </div>
-
-            <div class="project-actions">
-
-                <a
-                    href="${project.github}"
-                    class="btn-primary">
-
-                    GitHub
-
-                </a>
-
-                <a
-                    href="${project.demo}"
-                    class="btn-secondary">
-
-                    Details
-
-                </a>
-
-            </div>
-
-        </article>
-
-    `;
-
-}function renderProjects(){
+async function renderProjects(limit = null) {
 
     const container = document.getElementById("projects-container");
 
-    if(!container) return;
+    if (!container) return;
 
-    container.innerHTML = "";
+    container.innerHTML = `
+        <div class="project-skeleton"></div>
+        <div class="project-skeleton"></div>
+        <div class="project-skeleton"></div>
+    `;
 
-    projects.forEach(project => {
+    try {
 
-        container.innerHTML += createProjectCard(project);
+        let projects = await getProjects();
 
-    });
+        projects = projects.map(project => ({
+
+            ...project,
+
+            image: `assets/images/projects/${project.image}`,
+
+            featured: project.featured === "TRUE",
+
+            tags: project.tags
+                ? project.tags.split("|")
+                : []
+
+        }));
+
+        if (limit) {
+
+            projects = projects.slice(0, limit);
+
+        }
+
+        container.innerHTML = "";
+
+        if (projects.length === 0) {
+
+            container.innerHTML = `
+                <p class="empty-state">
+                    No projects found.
+                </p>
+            `;
+
+            return;
+
+        }
+
+        projects.forEach(project => {
+
+            container.innerHTML += createProjectCard(project);
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        container.innerHTML = `
+            <p class="error-state">
+                Unable to load projects.
+            </p>
+        `;
+
+    }
 
 }

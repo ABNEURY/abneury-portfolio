@@ -2,25 +2,38 @@
    SCROLL
 ========================================== */
 
+/* ==========================================
+   SMOOTH SCROLL
+========================================== */
+
 function initSmoothScroll(){
 
-    const links = document.querySelectorAll('a[href^="#"]');
+    const links = document.querySelectorAll(".nav-links a");
 
-    links.forEach(link=>{
+    links.forEach(link => {
 
-        link.addEventListener("click",function(e){
+        link.addEventListener("click", function(e){
 
-            const target=document.querySelector(this.getAttribute("href"));
+            const url = new URL(this.href);
 
-            if(!target) return;
+            // Só faz scroll suave se estivermos na mesma página
+            if(url.pathname === window.location.pathname){
 
-            e.preventDefault();
+                const target = document.querySelector(url.hash);
 
-            target.scrollIntoView({
+                if(target){
 
-                behavior:"smooth"
+                    e.preventDefault();
 
-            });
+                    target.scrollIntoView({
+
+                        behavior:"smooth"
+
+                    });
+
+                }
+
+            }
 
         });
 

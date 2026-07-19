@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-function init(){
+
+function init() {
 
     initNavbar();
 
@@ -18,7 +19,47 @@ function init(){
     initAnimations();
 
     initCounters();
-    
-    renderProjects();
+
+
+    /* ==========================================
+       PROJECTS
+    ========================================== */
+
+    const projectsContainer =
+        document.getElementById("projects-container");
+
+    if (projectsContainer) {
+
+        const isProjectsPage =
+            document.title.includes("Projects");
+
+        renderProjects(
+            isProjectsPage
+                ? null
+                : 3
+        );
+
+    }
+
+
+    /* ==========================================
+       LABS
+    ========================================== */
+
+    const labsContainer =
+        document.getElementById("labs-container");
+
+    if (labsContainer) {
+
+        const isLabsPage =
+            document.title.includes("Labs");
+
+        renderLabs(
+            isLabsPage
+                ? null
+                : 3
+        );
+
+    }
 
 }
