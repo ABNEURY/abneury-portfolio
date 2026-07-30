@@ -189,19 +189,30 @@ async function getSheet(sheetId) {
    PROJECTS
 ========================================== */
 
-async function getProjects() {
+async function getProjects(){
 
-    return await getSheet(SHEET_IDS.projects);
+    const csv =
+        await fetchCSV(SHEET_IDS.projects);
+
+    const projects =
+        parseCSV(csv);
+
+    return projects.map(normalizeProject);
 
 }
 
 /* ==========================================
-   LABS
+   GET LABS
 ========================================== */
 
 async function getLabs() {
 
-    return await getSheet(SHEET_IDS.labs);
+    const labs =
+        await getSheet(
+            SHEET_IDS.labs
+        );
+
+    return labs.map(normalizeLab);
 
 }
 
@@ -232,5 +243,87 @@ async function getArticles() {
 async function getCertifications() {
 
     return await getSheet(SHEET_IDS.certifications);
+
+}
+/* ==========================================
+   GET PROJECT BY ID
+========================================== */
+
+async function getProjectById(id) {
+
+    const projects = await getProjects();
+
+    return projects.find(
+
+        project => project.id === String(id)
+
+    );
+
+}
+/* ==========================================
+   NORMALIZE PROJECT
+========================================== */
+
+function normalizeProject(project) {
+
+    return {
+
+        ...project,
+
+        image: project.image
+            ? `assets/images/projects/${project.image}`
+            : "",
+
+        featured:
+            project.featured === "TRUE",
+
+        tags:
+            project.tags
+                ? project.tags.split("|")
+                : []
+
+    };
+
+}
+/* ==========================================
+   NORMALIZE LAB
+========================================== */
+
+function normalizeLab(lab) {
+
+    return {
+
+        ...lab,
+
+        image: lab.image
+            ? `assets/images/labs/${lab.image}`
+            : "",
+
+        featured:
+            lab.featured === "TRUE",
+
+        technologies:
+            lab.technologies
+                ? lab.technologies.split("|")
+                : []
+
+    };
+
+}
+/* ==========================================
+   GET LAB BY ID
+========================================== */
+
+async function getLabById(id) {
+
+    const labs =
+        await getLabs();
+
+    return labs.find(
+
+        lab =>
+            lab.id === String(id)
+
+    );
 
 }

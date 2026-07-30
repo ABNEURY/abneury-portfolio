@@ -1,16 +1,23 @@
 /* ==========================================
-   José Alberto Portfolio
-   Main JavaScript
+   JOSÉ ALBERTO PORTFOLIO
+   MAIN JAVASCRIPT
 ========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    init
+);
 
-    init();
 
-});
-
+/* ==========================================
+   INITIALIZE WEBSITE
+========================================== */
 
 function init() {
+
+    /* ======================================
+       GLOBAL COMPONENTS
+    ====================================== */
 
     initNavbar();
 
@@ -21,44 +28,96 @@ function init() {
     initCounters();
 
 
-    /* ==========================================
+    /* ======================================
        PROJECTS
-    ========================================== */
+    ====================================== */
 
     const projectsContainer =
-        document.getElementById("projects-container");
+        document.getElementById(
+            "projects-container"
+        );
+
 
     if (projectsContainer) {
 
         const isProjectsPage =
-            document.title.includes("Projects");
+            window.location.pathname
+                .includes("projects.html");
 
-        renderProjects(
-            isProjectsPage
-                ? null
-                : 3
-        );
+
+        if (isProjectsPage) {
+
+            renderProjects();
+
+        } else {
+
+            renderProjects(3);
+
+        }
 
     }
 
 
-    /* ==========================================
+    /* ======================================
        LABS
-    ========================================== */
+    ====================================== */
 
     const labsContainer =
-        document.getElementById("labs-container");
+        document.getElementById(
+            "labs-container"
+        );
+
 
     if (labsContainer) {
 
         const isLabsPage =
-            document.title.includes("Labs");
+            window.location.pathname
+                .includes("labs.html");
 
-        renderLabs(
-            isLabsPage
-                ? null
-                : 3
+
+        if (isLabsPage) {
+
+            renderLabs();
+
+        } else {
+
+            renderLabs(3);
+
+        }
+
+    }
+
+
+    /* ======================================
+       PROJECT DETAILS
+    ====================================== */
+
+    const projectDetails =
+        document.getElementById(
+            "project-details"
         );
+
+
+    if (projectDetails) {
+
+        renderProjectDetails();
+
+    }
+
+
+    /* ======================================
+       LAB DETAILS
+    ====================================== */
+
+    const labDetails =
+        document.getElementById(
+            "lab-details"
+        );
+
+
+    if (labDetails) {
+
+        renderLabDetails();
 
     }
 

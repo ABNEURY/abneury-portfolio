@@ -1,0 +1,184 @@
+/* ==========================================
+   DETAILS PAGE
+========================================== */
+
+.project-details {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ==========================================
+   DETAILS HEADER
+========================================== */
+
+.details-header {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+.details-header .section-description {
+
+    max-width: 750px;
+
+    margin: 20px auto 0;
+
+}
+
+
+/* ==========================================
+   DETAILS IMAGE
+========================================== */
+
+.project-details-image {
+
+    width: 100%;
+
+    max-height: 500px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    margin-bottom: 60px;
+
+}
+
+
+/* ==========================================
+   DETAILS SECTIONS
+========================================== */
+
+.details-section {
+
+    margin-bottom: 45px;
+
+}
+
+
+.details-section h2 {
+
+    margin-bottom: 16px;
+
+}
+
+
+.details-section p {
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================
+   DETAILS TECHNOLOGIES
+========================================== */
+
+.details-section .tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+/* ==========================================
+   DETAILS ACTIONS
+========================================== */
+
+.project-details-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 60px;
+
+}
+/* ==========================================
+   DETAILS CONTENT GRID
+========================================== */
+
+.details-content-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    margin-bottom: 45px;
+
+}
+
+
+/* ==========================================
+   DETAIL CARD
+========================================== */
+
+.details-card {
+
+    padding: 28px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 16px;
+
+    background: var(--surface);
+
+}
+
+
+.details-card h2 {
+
+    margin-bottom: 16px;
+
+}
+
+
+.details-card p {
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================
+   FULL WIDTH CARD
+========================================== */
+
+.details-card.full-width {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .details-content-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
