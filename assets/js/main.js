@@ -120,5 +120,39 @@ function init() {
         renderLabDetails();
 
     }
+   /* ======================================
+   DOCUMENTATION
+====================================== */
 
+const documentationContainer =
+    document.getElementById(
+        "documentation-container"
+    );
+
+
+if (documentationContainer) {
+
+    renderDocumentation();
+
+}
+
+
+/* ======================================
+   FEATURED DOCUMENTATION
+====================================== */
+
+const documentationPreviewContainer =
+    document.getElementById(
+        "documentation-preview-container"
+    );
+
+
+if (documentationPreviewContainer) {
+
+    renderDocumentation(
+        3,
+        "documentation-preview-container"
+    );
+
+}
 }

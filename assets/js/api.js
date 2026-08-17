@@ -12,7 +12,7 @@ const SHEET_BASE_URL =
 const SHEET_IDS = {
     projects: "0",
     labs: "281574715",
-    documentation: "",
+    documentation: "615331787",
     articles: "",
     certifications: ""
 };
@@ -323,6 +323,31 @@ async function getLabById(id) {
 
         lab =>
             lab.id === String(id)
+
+    );
+
+}
+/* ==========================================
+   DOCUMENTATION
+========================================== */
+
+async function getDocumentation() {
+
+    return await getSheet(
+        SHEET_IDS.documentation
+    );
+
+}
+async function getDocumentationById(id) {
+
+    const documentation =
+        await getDocumentation();
+
+    return documentation.find(
+
+        document =>
+
+            document.id === id
 
     );
 

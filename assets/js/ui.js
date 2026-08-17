@@ -111,3 +111,80 @@ function createLabCard(lab) {
     `;
 
 }
+/* ==========================================
+   DOCUMENTATION CARD
+========================================== */
+
+function createDocumentationCard(document) {
+
+    return `
+
+        <article class="project-card">
+
+            ${
+                document.image
+
+                    ? `
+
+                        <img
+                            src="${document.image}"
+                            alt="${document.title}"
+                            class="project-image">
+
+                      `
+
+                    : ""
+
+            }
+
+            <span class="project-category">
+
+                ${document.category}
+
+            </span>
+
+            <h3>
+
+                ${document.title}
+
+            </h3>
+
+            <p>
+
+                ${document.description}
+
+            </p>
+
+            <div class="tags">
+
+                <span>
+
+                    ${document.type}
+
+                </span>
+
+                ${document.tags
+                    .map(
+                        tag => `<span>${tag}</span>`
+                    )
+                    .join("")}
+
+            </div>
+
+            <div class="project-actions">
+
+                <a
+                    href="documentation-detail.html?id=${document.id}"
+                    class="btn-secondary">
+
+                    View
+
+                </a>
+
+            </div>
+
+        </article>
+
+    `;
+
+}
