@@ -13,7 +13,7 @@ const SHEET_IDS = {
     projects: "0",
     labs: "281574715",
     documentation: "615331787",
-    articles: "",
+    articles: "1162926040",
     certifications: ""
 };
 
