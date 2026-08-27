@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://abneury.github.io/abneury-portfolio/sitemap.xml
