@@ -188,3 +188,188 @@ function createDocumentationCard(document) {
     `;
 
 }
+/* ==========================================
+   ARTICLE CARD
+========================================== */
+
+function createArticleCard(article) {
+
+    return `
+
+        <article class="project-card">
+
+            ${
+                article.image
+                    ? `
+                        <img
+                            src="${article.image}"
+                            alt="${article.title}"
+                            class="project-card-image">
+                      `
+                    : ""
+            }
+
+
+            <div class="project-card-content">
+
+
+                <span class="project-category">
+
+                    ${article.category || "Article"}
+
+                </span>
+
+
+                <h3>
+
+                    ${article.title}
+
+                </h3>
+
+
+                <p>
+
+                    ${article.description}
+
+                </p>
+
+
+                ${
+                    article.tags.length
+                        ? `
+                            <div class="tags">
+
+                                ${article.tags
+                                    .map(
+                                        tag =>
+                                        `<span>${tag}</span>`
+                                    )
+                                    .join("")}
+
+                            </div>
+                          `
+                        : ""
+                }
+
+
+                <div class="project-card-footer">
+
+                    <span class="project-category">
+
+                        ${article.date || ""}
+
+                    </span>
+
+
+                    <a
+                        href="article.html?id=${article.id}"
+                        class="btn-secondary">
+
+                        Read Article
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+    `;
+
+}
+ /* ==========================================
+    CERTIFICATION CARD
+ ========================================== */
+
+ function createCertificationCard(certification) {
+
+     return `
+
+         <article class="project-card">
+
+             ${
+                 certification.image
+                     ? `
+                         <img
+                             src="${certification.image}"
+                             alt="${certification.title}"
+                             class="project-image">
+                       `
+                     : ""
+             }
+
+
+             <span class="project-category">
+
+                 ${certification.issuer || "Certification"}
+
+             </span>
+
+
+             <h3>
+
+                 ${certification.title}
+
+             </h3>
+
+
+             <p>
+
+                 ${certification.description}
+
+             </p>
+
+
+             ${
+                 certification.tags.length
+                     ? `
+                         <div class="tags">
+
+                             ${certification.tags
+                                 .map(
+                                     tag =>
+                                     `<span>${tag}</span>`
+                                 )
+                                 .join("")}
+
+                         </div>
+                       `
+                     : ""
+             }
+
+
+             <div class="project-card-footer">
+
+                 <span class="project-category">
+
+                     ${certification.date || ""}
+
+                 </span>
+
+
+                 ${
+                     certification.credential
+                         ? `
+                             <a
+                                 href="${certification.credential}"
+                                 class="btn-secondary"
+                                 target="_blank"
+                                 rel="noopener noreferrer">
+
+                                 View Credential
+
+                             </a>
+                           `
+                         : ""
+                 }
+
+             </div>
+
+
+         </article>
+
+     `;
+
+ }

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Articles | José Alberto
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="container">
+
+        <a
+            href="index.html"
+            class="logo">
+
+            José Alberto💻
+
+        </a>
+
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="labs.html">
+                        Labs
+                    </a>
+                </li>
+
+                <li>
+                    <a href="documentation.html">
+                        Documentation
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="blog.html"
+                        class="active">
+
+                        Articles
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="projects-page">
+
+        <div class="container">
+
+            <span class="section-tag">
+                Articles
+            </span>
+
+
+            <h1 class="section-title">
+
+                Technical Articles
+
+            </h1>
+
+
+            <p class="section-description">
+
+                Technical articles about systems administration,
+                networking, infrastructure, Linux and cybersecurity.
+
+            </p>
+
+
+            <div
+                id="articles-container"
+                class="projects-grid">
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/articles.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        renderArticles();
+    });
+</script>
+
+</body>
+
+</html>

@@ -25,7 +25,10 @@ function init() {
 
     initAnimations();
 
-    initCounters();
+    if (typeof initCounters === "function") {
+         initCounters();
+    
+        };
 
 
     /* ======================================
@@ -154,5 +157,71 @@ if (documentationPreviewContainer) {
         "documentation-preview-container"
     );
 
+}
+/* ======================================
+   ARTICLES
+====================================== */
+
+const articlesContainer =
+    document.getElementById(
+        "articles-container"
+    );
+
+
+if (articlesContainer) {
+
+    renderArticles();
+
+}
+
+
+/* ======================================
+   FEATURED ARTICLES
+====================================== */
+
+const articlesPreviewContainer =
+    document.getElementById(
+        "articles-preview-container"
+    );
+
+
+if (articlesPreviewContainer) {
+
+    renderArticles(
+        3,
+        "articles-preview-container"
+    );
+
+}
+/* ======================================
+   ARTICLE DETAILS
+====================================== */
+
+const articleDetails =
+    document.getElementById(
+        "article-details"
+    );
+
+
+if (articleDetails) {
+
+    renderArticleDetails();
+
+}
+const documentationDetails =
+    document.getElementById(
+        "documentation-details"
+    );
+
+if (documentationDetails) {
+
+    renderDocumentationDetails();
+
+}
+const certificationsContainer =
+    document.getElementById("certifications-container");
+
+if (certificationsContainer) {
+    renderCertifications();
 }
 }

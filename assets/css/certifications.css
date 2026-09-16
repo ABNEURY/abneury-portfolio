@@ -1,0 +1,121 @@
+/* ==========================================
+   CERTIFICATIONS
+========================================== */
+
+.certifications-page {
+    padding: 70px 0;
+}
+
+.certifications-page .section-header {
+    margin-bottom: 45px;
+}
+
+/* Grid */
+
+#certifications-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Card */
+
+#certifications-container .project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagem */
+
+#certifications-container .project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Título */
+
+#certifications-container .project-card h3 {
+    margin-bottom: 12px;
+}
+
+/* Descrição */
+
+#certifications-container .project-card p {
+    margin-bottom: 18px;
+}
+
+/* Tags */
+
+#certifications-container .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+#certifications-container .tags span {
+    font-size: 0.8rem;
+}
+
+/* Rodapé do card */
+
+#certifications-container .project-card-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Botão */
+
+#certifications-container .btn-secondary {
+    white-space: nowrap;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+    #certifications-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .certifications-page {
+        padding: 50px 0;
+    }
+
+    #certifications-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    #certifications-container .project-image {
+        height: 220px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    #certifications-container .project-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #certifications-container .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+}

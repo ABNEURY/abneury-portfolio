@@ -14,7 +14,7 @@ const SHEET_IDS = {
     labs: "281574715",
     documentation: "615331787",
     articles: "1162926040",
-    certifications: ""
+    certifications: "1238513051"
 };
 
 /* ==========================================
