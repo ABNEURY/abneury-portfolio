@@ -7,12 +7,16 @@
    RENDER CERTIFICATIONS
 ========================================== */
 
-async function renderCertifications() {
+async function renderCertifications(
+    limit = null,
+    targetId = "certifications-container"
+) {
 
     const container =
         document.getElementById(
-            "certifications-container"
+            targetId
         );
+
 
     if (!container) {
         return;
@@ -82,11 +86,32 @@ async function renderCertifications() {
 
 
         /* ======================================
+           FILTER / LIMIT
+        ====================================== */
+
+        let certificationsToRender =
+            normalizedCertifications;
+
+
+        if (limit) {
+
+            certificationsToRender =
+                normalizedCertifications
+                    .filter(
+                        certification =>
+                            certification.featured
+                    )
+                    .slice(0, limit);
+
+        }
+
+
+        /* ======================================
            RENDER
         ====================================== */
 
         container.innerHTML =
-            normalizedCertifications
+            certificationsToRender
                 .map(createCertificationCard)
                 .join("");
 

@@ -26,9 +26,8 @@ function init() {
     initAnimations();
 
     if (typeof initCounters === "function") {
-         initCounters();
-    
-        };
+        initCounters();
+    }
 
 
     /* ======================================
@@ -123,105 +122,150 @@ function init() {
         renderLabDetails();
 
     }
-   /* ======================================
-   DOCUMENTATION
-====================================== */
-
-const documentationContainer =
-    document.getElementById(
-        "documentation-container"
-    );
 
 
-if (documentationContainer) {
+    /* ======================================
+       DOCUMENTATION
+    ====================================== */
 
-    renderDocumentation();
-
-}
-
-
-/* ======================================
-   FEATURED DOCUMENTATION
-====================================== */
-
-const documentationPreviewContainer =
-    document.getElementById(
-        "documentation-preview-container"
-    );
+    const documentationContainer =
+        document.getElementById(
+            "documentation-container"
+        );
 
 
-if (documentationPreviewContainer) {
+    if (documentationContainer) {
 
-    renderDocumentation(
-        3,
-        "documentation-preview-container"
-    );
+        renderDocumentation();
 
-}
-/* ======================================
-   ARTICLES
-====================================== */
-
-const articlesContainer =
-    document.getElementById(
-        "articles-container"
-    );
+    }
 
 
-if (articlesContainer) {
+    /* ======================================
+       FEATURED DOCUMENTATION
+    ====================================== */
 
-    renderArticles();
-
-}
-
-
-/* ======================================
-   FEATURED ARTICLES
-====================================== */
-
-const articlesPreviewContainer =
-    document.getElementById(
-        "articles-preview-container"
-    );
+    const documentationPreviewContainer =
+        document.getElementById(
+            "documentation-preview-container"
+        );
 
 
-if (articlesPreviewContainer) {
+    if (documentationPreviewContainer) {
 
-    renderArticles(
-        3,
-        "articles-preview-container"
-    );
+        renderDocumentation(
+            3,
+            "documentation-preview-container"
+        );
 
-}
-/* ======================================
-   ARTICLE DETAILS
-====================================== */
-
-const articleDetails =
-    document.getElementById(
-        "article-details"
-    );
+    }
 
 
-if (articleDetails) {
+    /* ======================================
+       ARTICLES
+    ====================================== */
 
-    renderArticleDetails();
+    const articlesContainer =
+        document.getElementById(
+            "articles-container"
+        );
 
-}
-const documentationDetails =
-    document.getElementById(
-        "documentation-details"
-    );
 
-if (documentationDetails) {
+    if (articlesContainer) {
 
-    renderDocumentationDetails();
+        renderArticles();
 
-}
-const certificationsContainer =
-    document.getElementById("certifications-container");
+    }
 
-if (certificationsContainer) {
-    renderCertifications();
-}
+
+    /* ======================================
+       FEATURED ARTICLES
+    ====================================== */
+
+    const articlesPreviewContainer =
+        document.getElementById(
+            "articles-preview-container"
+        );
+
+
+    if (articlesPreviewContainer) {
+
+        renderArticles(
+            3,
+            "articles-preview-container"
+        );
+
+    }
+
+
+    /* ======================================
+       ARTICLE DETAILS
+    ====================================== */
+
+    const articleDetails =
+        document.getElementById(
+            "article-details"
+        );
+
+
+    if (articleDetails) {
+
+        renderArticleDetails();
+
+    }
+
+
+    /* ======================================
+       DOCUMENTATION DETAILS
+    ====================================== */
+
+    const documentationDetails =
+        document.getElementById(
+            "documentation-details"
+        );
+
+
+    if (documentationDetails) {
+
+        renderDocumentationDetails();
+
+    }
+
+
+    /* ======================================
+       CERTIFICATIONS
+    ====================================== */
+
+    const certificationsContainer =
+        document.getElementById(
+            "certifications-container"
+        );
+
+
+    if (certificationsContainer) {
+
+        renderCertifications();
+
+    }
+
+
+    /* ======================================
+       FEATURED CERTIFICATIONS
+    ====================================== */
+
+    const certificationsPreviewContainer =
+        document.getElementById(
+            "certifications-preview-container"
+        );
+
+
+    if (certificationsPreviewContainer) {
+
+        renderCertifications(
+            3,
+            "certifications-preview-container"
+        );
+
+    }
+
 }
