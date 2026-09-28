@@ -2,60 +2,169 @@
    COUNTERS
 ========================================== */
 
-function initCounters() {
+async function initCounters() {
 
-    const counters = document.querySelectorAll(".counter");
+    const counters =
+        document.querySelectorAll(".counter");
 
-    if (counters.length === 0) return;
+    if (counters.length === 0) {
+        return;
+    }
 
-    const observer = new IntersectionObserver((entries, observer) => {
 
-        entries.forEach(entry => {
+    try {
 
-            if (entry.isIntersecting) {
+        /* ======================================
+           LOAD DATA FROM GOOGLE SHEETS
+        ====================================== */
 
-                animateCounter(entry.target);
+        const [
+            projects,
+            labs,
+            documentation,
+            certifications
+        ] = await Promise.all([
 
-                observer.unobserve(entry.target);
+            getProjects(),
 
-            }
+            getLabs(),
+
+            getDocumentation(),
+
+            getCertifications()
+
+        ]);
+
+
+        /* ======================================
+           COUNTER VALUES
+        ====================================== */
+
+        const counts = {
+
+            projects:
+                projects?.length || 0,
+
+            labs:
+                labs?.length || 0,
+
+            documentation:
+                documentation?.length || 0,
+
+            certifications:
+                certifications?.length || 0
+
+        };
+
+
+        /* ======================================
+           SET TARGETS
+        ====================================== */
+
+        counters.forEach(counter => {
+
+            const type =
+                counter.dataset.counter;
+
+            const target =
+                counts[type] ?? 0;
+
+            counter.dataset.target =
+                target;
 
         });
 
-    }, {
-        threshold: 0.5
-    });
 
-    counters.forEach(counter => {
-        observer.observe(counter);
-    });
+        /* ======================================
+           ANIMATION
+        ====================================== */
+
+        const observer =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            animateCounter(
+                                entry.target
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.5
+                }
+            );
+
+
+        counters.forEach(counter => {
+
+            observer.observe(counter);
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Error loading counter data:",
+            error
+        );
+
+    }
 
 }
 
+
+/* ==========================================
+   ANIMATE COUNTER
+========================================== */
+
 function animateCounter(counter) {
 
-    const target = parseInt(counter.dataset.target);
+    const target =
+        parseInt(
+            counter.dataset.target,
+            10
+        ) || 0;
+
     const duration = 1500;
 
     let start = 0;
-    const increment = target / (duration / 16);
 
-    const timer = setInterval(() => {
+    const increment =
+        target / (duration / 16);
 
-        start += increment;
 
-        if (start >= target) {
+    const timer =
+        setInterval(() => {
 
-            counter.textContent = target;
+            start += increment;
 
-            clearInterval(timer);
 
-        } else {
+            if (start >= target) {
 
-            counter.textContent = Math.floor(start);
+                counter.textContent =
+                    target;
 
-        }
+                clearInterval(timer);
 
-    }, 16);
+            } else {
+
+                counter.textContent =
+                    Math.floor(start);
+
+            }
+
+        }, 16);
 
 }
